@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/dutchenkoOleg/gulp-happiness-scss/issues"
   },
-  "homepage": "https://github.com/dutchenkoOleg/gulp-happiness-scss#readme"
+  "homepage": "https://github.com/dutchenkoOleg/gulp-happiness-scss#readme",
+  "dependencies": {
+    "happiness-scss": "0.0.0"
+  },
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0"
+  }
 }
