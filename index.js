@@ -86,7 +86,7 @@ function getPathText (count) {
 function getEslintData (file, pluginError, runOptions = {}) {
 	let notSupported = notSupportedFile(file, pluginError, {
 		silent: runOptions.silent,
-		noUnderscore: runOptions.noUnderscore,
+		noUnderscore: runOptions.noUnderscore || false,
 		noEmpty: runOptions.noEmpty
 	});
 
@@ -127,7 +127,7 @@ function gulpHappinessScss (options = {}) {
 	return through2.obj(function (file, enc, cb) {
 		let notSupported = notSupportedFile(file, pluginError, {
 			silent: runOptions.silent,
-			noUnderscore: runOptions.noUnderscore,
+			noUnderscore: runOptions.noUnderscore || false,
 			noEmpty: runOptions.noEmpty
 		});
 
@@ -137,7 +137,7 @@ function gulpHappinessScss (options = {}) {
 		}
 
 		// let fixProblems = runOptions.fix;
-		let lintOptions = {};
+		let lintOptions = runOptions.linerOptions || {};
 
 		// if (fixProblems) {
 		// 	happinessScss.sassLintConfig.fix = true;
@@ -178,21 +178,14 @@ function gulpHappinessScss (options = {}) {
  * @param {boolean}       [options.noUnderscore=true]
  * @param {boolean}       [options.noEmpty=true]
  * @param {boolean}       [options.showHappyFiles]
+ * @param {boolean}       [options.linterOptions={}]
  * @returns {DestroyableTransform} through2.obj
  * @sourceCode
  */
-gulpHappinessScss.format = function (formatter = 'stylish', options = {}) {
-	if (_isPlainObject(formatter)) {
-		options = _cloneDeep(formatter);
-		formatter = 'stylish';
-	}
-
+gulpHappinessScss.format = function (options = {}) {
 	let runOptions = _cloneDeep(options);
-	let sassLintFormattersFolder = 'eslint/lib/formatters';
 
-	if (runOptions.silent) {
-		runOptions.showHappyFiles = false;
-	}
+	runOptions.linterOptions = runOptions.linterOptions || {};
 
 	return through2.obj(function (file, ...args) {
 		let cb = args[1];
@@ -210,31 +203,14 @@ gulpHappinessScss.format = function (formatter = 'stylish', options = {}) {
 			return cb(null, file);
 		}
 
-		if (_isFunction(formatter)) {
-			let output = formatter(sassLintData.results, runOptions.formatterOptions);
+		try {
+			let formatted = happinessScss.format(sassLintData.results, runOptions.linterOptions);
 
-			console.log(output);
-			file.sassLintIsFormeated = true;
-			return cb(null, file);
+			console.log(formatted);
+			cb(null, file);
+		} catch (err) {
+			return cb(pluginError(err));
 		}
-
-		if (_isString(formatter)) {
-			let formatterPath = path.join(sassLintFormattersFolder, formatter);
-
-			try {
-				let formatterModule = require(formatterPath);
-				let result = formatterModule(sassLintData.results, runOptions.formatterOptions);
-
-				console.log(gutil.colors.red(`SAD FILE > ${file.path}`));
-				console.log(result);
-				file.sassLintIsFormeated = true;
-				return cb(null, file);
-			} catch (err) {
-				return cb(pluginError(err));
-			}
-		}
-
-		return cb(pluginError(`Error! No suitable formatter - ${formatter}`));
 	});
 };
 
@@ -325,7 +301,7 @@ gulpHappinessScss.failAfterError = function (options = {}) {
 		sassLintIsFormatted = file.sassLintIsFormeated;
 		allErrorsCount += sassLintData.errorCount.count;
 		sassLintData.results.forEach(result => {
-			let count = result.errorCount.count;
+			let count = result.errorCount;
 			let errorText = getErrorText(count);
 
 			filePaths.push(`has ${count} ${errorText} in ${result.filePath}`);

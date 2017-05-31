@@ -42,6 +42,7 @@
   "devDependencies": {
     "gulp": "github:gulpjs/gulp#4.0",
     "happiness": "^7.1.2",
+    "happiness-scss": "^1.0.0",
     "multipipe": "^1.0.2",
     "snazzy": "^7.0.0"
   }
