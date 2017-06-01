@@ -2,6 +2,13 @@
 	margin: 0;
 }
 
-#bar {
+.bem {
+	&__dev {
+		position: relative;
+	}
+}
+
+.bar {
 	padding: 5px 0 0;
+	content: 'sdfs';
 }

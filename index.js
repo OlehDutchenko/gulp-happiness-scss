@@ -10,14 +10,13 @@
 // Imports
 // ----------------------------------------
 
-const path = require('path');
+// const path = require('path');
 const gutil = require('gulp-util');
 const through2 = require('through2');
 const happinessScss = require('happiness-scss');
 const _cloneDeep = require('lodash.clonedeep');
 const _isPlainObject = require('lodash.isplainobject');
 const _isFunction = require('lodash.isfunction');
-const _isString = require('lodash.isstring');
 const notSupportedFile = require('gulp-not-supported-file');
 
 // ----------------------------------------

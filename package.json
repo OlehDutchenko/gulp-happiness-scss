@@ -1,6 +1,6 @@
 {
   "name": "gulp-happiness-scss",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "gulp plugin for happiness-scss",
   "main": "index.js",
   "scripts": {
@@ -32,7 +32,7 @@
   "dependencies": {
     "gulp-not-supported-file": "^1.1.3",
     "gulp-util": "^3.0.8",
-    "happiness-scss": "^1.0.0",
+    "happiness-scss": "^1.0.1",
     "lodash.clonedeep": "^4.5.0",
     "lodash.isfunction": "^3.0.8",
     "lodash.isplainobject": "^4.0.6",
@@ -42,7 +42,6 @@
   "devDependencies": {
     "gulp": "github:gulpjs/gulp#4.0",
     "happiness": "^7.1.2",
-    "happiness-scss": "^1.0.0",
     "multipipe": "^1.0.2",
     "snazzy": "^7.0.0"
   }
