@@ -26,8 +26,11 @@ gulp.task('lint', function () {
 		.pipe(multipipe(
 			gulpHappinessScss(),
 			gulpHappinessScss.format({
-				showHappyFiles: true
+				showHappyFiles: true,
+				linterOptions: {
+					formatter: 'table'
+				}
 			}),
-			gulpHappinessScss.failAfterError()
+			gulpHappinessScss.failOnError()
 		));
 });
