@@ -10,7 +10,7 @@
 // Imports
 // ----------------------------------------
 
-// const path = require('path');
+const path = require('path');
 const gutil = require('gulp-util');
 const through2 = require('through2');
 const happinessScss = require('happiness-scss');
@@ -135,31 +135,14 @@ function gulpHappinessScss (options = {}) {
 			return cb(...notSupported);
 		}
 
-		// let fixProblems = runOptions.fix;
 		let lintOptions = runOptions.linerOptions || {};
+		let testFile = {
+			text: String(file.contents),
+			format: path.extname(file.path).replace('.', ''),
+			filename: file.path
+		};
 
-		// if (fixProblems) {
-		// 	happinessScss.sassLintConfig.fix = true;
-		// 	happinessScss.lintFiles([file.path], lintOptions, function (err, data) {
-		// 		if (err) {
-		// 			return cb(pluginError(err));
-		// 		}
-		//
-		// 		let output = data.results && data.results[0] && data.results[0].output;
-		//
-		// 		if (typeof output === 'string') {
-		// 			file.contents = Buffer.from(output, enc);
-		// 		}
-		// 		if (data.errorCount.count > 0) {
-		// 			console.log(gutil.colors.yellow(`\nCannot auto fix ${file.path}\nDo it yourself manual\n`));
-		// 		}
-		// 		file.sassLint = data;
-		// 		cb(null, file);
-		// 	});
-		// 	return;
-		// }
-
-		happinessScss.lintFiles(file.path, lintOptions, function (err, data) {
+		happinessScss.lintFileText(testFile, lintOptions, function (err, data) {
 			if (err) {
 				return cb(pluginError(err));
 			}

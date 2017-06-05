@@ -19,7 +19,7 @@ const gulpHappinessScss = require('./index');
 
 gulp.task('lint', function () {
 	let sources = [
-		'./test/**/*.scss'
+		'./test/**/*.{scss,md}'
 	];
 
 	return gulp.src(sources)
@@ -30,7 +30,7 @@ gulp.task('lint', function () {
 				linterOptions: {
 					formatter: 'table'
 				}
-			}),
-			gulpHappinessScss.failOnError()
+			})
+			// gulpHappinessScss.failOnError()
 		));
 });
