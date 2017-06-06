@@ -122,10 +122,6 @@ type `boolean` /
 default `undefined`  
 No logs about `noEmpty` and `noUnderscore` files
 
-#### options.linterOptions
-
-Here you can set options [`happiness-scss > Nodejs API > config`](https://www.npmjs.com/package/happiness-scss#config)  
-
 ### gulpHappiness.format()
 
 _No explicit configuration._   
@@ -229,3 +225,30 @@ Same as [gulpHappiness.failOnError(options) → options.disabled](#optionsdisabl
 #### options.linterOptions
 
 Here you can set options [`happiness-scss > Nodejs API > config`](https://www.npmjs.com/package/happiness-scss#config)  
+
+---
+
+## Rules
+
+Please read [happiness-scss / wiki / Rules](https://github.com/dutchenkoOleg/happiness-scss/wiki/Rules)
+
+---
+
+## Disabling Linters via Source
+
+Please read [Disabling Linters via Source](https://github.com/dutchenkoOleg/happiness-scss#disabling-linters-via-source)
+
+---
+
+## Tests
+
+1. `npm test` for testing js and scss code style
+1. `npm run happiness-fix` for automatically fix most of problems with **js code style** 
+
+## Changelog
+
+Please read [CHANGELOG.md](https://github.com/dutchenkoOleg/gulp-happiness-scss/blob/master/CHANGELOG.md)
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://github.com/dutchenkoOleg/gulp-happiness-scss/blob/master/CONTRIBUTING.md)

@@ -7,6 +7,8 @@
 
 ---
 
-There no notable changes yet
+### [0.1.0] - 2017-06-06
+
+- First stable realese
 
 ---
