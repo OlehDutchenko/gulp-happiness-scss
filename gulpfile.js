@@ -24,7 +24,11 @@ gulp.task('lint', function () {
 
 	return gulp.src(sources)
 		.pipe(multipipe(
-			gulpHappinessScss(),
+			gulpHappinessScss({
+				linterOptions: {
+					noDisabling: true
+				}
+			}),
 			gulpHappinessScss.format({
 				showHappyFiles: true,
 				linterOptions: {

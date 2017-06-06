@@ -82,7 +82,7 @@ function getPathText (count) {
  * @private
  * @sourceCode
  */
-function getEslintData (file, pluginError, runOptions = {}) {
+function getSassLintData (file, pluginError, runOptions = {}) {
 	let notSupported = notSupportedFile(file, pluginError, {
 		silent: runOptions.silent,
 		noUnderscore: runOptions.noUnderscore || false,
@@ -99,7 +99,7 @@ function getEslintData (file, pluginError, runOptions = {}) {
 		return sassLintData;
 	}
 
-	return ['isNoEslintData'];
+	return ['isNoSasslintData'];
 }
 
 // ----------------------------------------
@@ -135,7 +135,7 @@ function gulpHappinessScss (options = {}) {
 			return cb(...notSupported);
 		}
 
-		let lintOptions = runOptions.linerOptions || {};
+		let lintOptions = runOptions.linterOptions || {};
 		let testFile = {
 			text: String(file.contents),
 			format: path.extname(file.path).replace('.', ''),
@@ -154,13 +154,12 @@ function gulpHappinessScss (options = {}) {
 
 /**
  * Get linting data from from file and show it in terminal
- * @param {string|Object} [formatter='stylish'] if it is Object using as options
- * @param {Object}        [options={}]
- * @param {boolean}       [options.silent]
- * @param {boolean}       [options.noUnderscore=true]
- * @param {boolean}       [options.noEmpty=true]
- * @param {boolean}       [options.showHappyFiles]
- * @param {boolean}       [options.linterOptions={}]
+ * @param {Object}  [options={}]
+ * @param {boolean} [options.silent]
+ * @param {boolean} [options.noUnderscore=true]
+ * @param {boolean} [options.noEmpty=true]
+ * @param {boolean} [options.showHappyFiles=false]
+ * @param {boolean} [options.linterOptions={}]
  * @returns {DestroyableTransform} through2.obj
  * @sourceCode
  */
@@ -171,7 +170,7 @@ gulpHappinessScss.format = function (options = {}) {
 
 	return through2.obj(function (file, ...args) {
 		let cb = args[1];
-		let sassLintData = getEslintData(file, pluginError, runOptions);
+		let sassLintData = getSassLintData(file, pluginError, runOptions);
 
 		if (Array.isArray(sassLintData)) {
 			sassLintData.shift();
@@ -211,7 +210,7 @@ gulpHappinessScss.failOnError = function (options = {}) {
 	return through2.obj(function (file, ...args) {
 		let cb = args[1];
 		let filePaths = [];
-		let sassLintData = getEslintData(file, pluginError, runOptions);
+		let sassLintData = getSassLintData(file, pluginError, runOptions);
 
 		if (Array.isArray(sassLintData)) {
 			sassLintData.shift();
@@ -269,7 +268,7 @@ gulpHappinessScss.failAfterError = function (options = {}) {
 
 	return through2.obj(function (file, ...args) {
 		let cb = args[1];
-		let sassLintData = getEslintData(file, pluginError, runOptions);
+		let sassLintData = getSassLintData(file, pluginError, runOptions);
 
 		if (Array.isArray(sassLintData)) {
 			sassLintData.shift();

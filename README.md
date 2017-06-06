@@ -3,6 +3,8 @@
 ![npm](https://img.shields.io/badge/node-6.3.1-yellow.svg)
 [![es2015](https://img.shields.io/badge/ECMAScript-2015_(ES6)-blue.svg)](https://nodejs.org/en/docs/es6/) 
 [![license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/dutchenkoOleg/gulp-happiness/blob/master/LICENSE) 
+[![Dependencies](https://www.versioneye.com/user/projects/5936521f98442b005cdc7bd2/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5936521f98442b005cdc7bd2?child=summary) 
+[![Build Status](https://travis-ci.org/dutchenkoOleg/gulp-happiness-scss.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/gulp-happiness-scss)
 
 > _Gulp plugin for [happiness-scss](https://github.com/dutchenkoOleg/happiness-scss)_
 
@@ -120,6 +122,10 @@ type `boolean` /
 default `undefined`  
 No logs about `noEmpty` and `noUnderscore` files
 
+#### options.linterOptions
+
+Here you can set options [`happiness-scss > Nodejs API > config`](https://www.npmjs.com/package/happiness-scss#config)  
+
 ### gulpHappiness.format()
 
 _No explicit configuration._   
@@ -128,20 +134,7 @@ Default formatter is `stylish`
 
 
 
-
-
-
-
-
-
 ### gulpHappiness.format(config)
-
-
-#### options.formatterOptions
-
-type `Object` /
-default `undefined`  
-Options for the chosen formatter 
 
 #### options.showHappyFiles
 
@@ -164,6 +157,10 @@ Same as [gulpHappinessScss(options) → options.noEmpty](#optionsnoempty)
 #### options.silent
 
 Same as [gulpHappinessScss(options) → options.silent](#optionssilent)
+
+#### options.linterOptions
+
+Here you can set options [`happiness-scss > Nodejs API > config`](https://www.npmjs.com/package/happiness-scss#config)  
 
 
 
@@ -211,6 +208,10 @@ Same as [gulpHappinessScss(options) → options.noEmpty](#optionsnoempty)
 
 Same as [gulpHappinessScss(options) → options.silent](#optionssilent)
 
+#### options.linterOptions
+
+Here you can set options [`happiness-scss > Nodejs API > config`](https://www.npmjs.com/package/happiness-scss#config)  
+
 
 
 
@@ -224,3 +225,7 @@ _No explicit configuration._
 #### options.disabled
 
 Same as [gulpHappiness.failOnError(options) → options.disabled](#optionsdisabled)
+
+#### options.linterOptions
+
+Here you can set options [`happiness-scss > Nodejs API > config`](https://www.npmjs.com/package/happiness-scss#config)  
