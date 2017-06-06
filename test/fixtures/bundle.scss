@@ -1,0 +1,14 @@
+.foo {
+	margin: 0;
+}
+
+.bem {
+	&__dev {
+		position: relative;
+	}
+}
+
+#bar { // sass-lint:disable-line no-ids
+	padding: 5px 0 0;
+	content: 'sdfs';
+}
