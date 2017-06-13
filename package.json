@@ -1,10 +1,10 @@
 {
   "name": "gulp-happiness-scss",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "gulp plugin for happiness-scss",
   "main": "index.js",
   "scripts": {
-    "test": "happiness \"./*.js\" --verbose | snazzy && echo \"happiness-scss version\" && happiness-scss -V && happiness-scss -q -m 10",
+    "test": "happiness \"./*.js\" --verbose | snazzy && echo \"happiness-scss version\" && node ./node_modules/happiness-scss/bin/cmd.js -V && node ./node_modules/happiness-scss/bin/cmd.js -q -m 10",
     "happiness-fix": "happiness \"./*.js\" --fix | snazzy"
   },
   "repository": {
