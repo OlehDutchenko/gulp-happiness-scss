@@ -7,6 +7,12 @@
 
 ---
 
+### [2.0.0] - 2017-06-13
+
+- Bump `happiness-scss@3.0.0`
+
+---
+
 ### [1.0.0] - 2017-06-06
 
 - First stable release
