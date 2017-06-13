@@ -4,7 +4,7 @@
   "description": "gulp plugin for happiness-scss",
   "main": "index.js",
   "scripts": {
-    "test": "happiness \"./*.js\" --verbose | snazzy && echo \"happiness-scss version\" && node ./node_modules/happiness-scss/bin/happiness-scss.js -V && node ./node_modules/happiness-scss/bin/happiness-scss.js -q -m 10",
+    "test": "happiness \"./*.js\" --verbose | snazzy && echo \"happiness-scss version\" && happiness-scss -V && happiness-scss -q -m 10",
     "happiness-fix": "happiness \"./*.js\" --fix | snazzy"
   },
   "repository": {
