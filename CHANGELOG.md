@@ -7,9 +7,15 @@
 
 ---
 
+### [4.0.0] - 2017-06-19
+
+- Bump to `happiness-scss@4.0.1`
+
+---
+
 ### [2.0.0] - 2017-06-13
 
-- Bump `happiness-scss@3.0.0`
+- Bump to `happiness-scss@3.0.0`
 
 ---
 
