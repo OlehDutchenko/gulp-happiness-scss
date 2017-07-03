@@ -252,3 +252,7 @@ Please read [CHANGELOG.md](https://github.com/dutchenkoOleg/gulp-happiness-scss/
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/dutchenkoOleg/gulp-happiness-scss/blob/master/CONTRIBUTING.md)
+
+## Code of Conduct
+
+Please read [CODE_OF_CONDUCT.md](https://github.com/dutchenkoOleg/gulp-happiness-scss/blob/master/CODE_OF_CONDUCT.md)
