@@ -230,7 +230,7 @@ Here you can set options [`happiness-scss > Nodejs API > config`](https://www.np
 
 ## Rules
 
-Please read [happiness-scss / wiki / Rules](https://github.com/dutchenkoOleg/happiness-scss/wiki/Rules)
+Please read [happiness-scss / docs / Rules](https://github.com/dutchenkoOleg/happiness-scss/blob/master/docs/Rules.md)
 
 ---
 
