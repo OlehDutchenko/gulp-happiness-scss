@@ -132,7 +132,7 @@ function gulpHappinessScss (options = {}) {
 
 		if (Array.isArray(notSupported)) {
 			notSupported.shift();
-			return cb(...notSupported);
+			return cb(notSupported[0], notSupported[1]);
 		}
 
 		let lintOptions = runOptions.linterOptions || {};
@@ -174,7 +174,7 @@ gulpHappinessScss.format = function (options = {}) {
 
 		if (Array.isArray(sassLintData)) {
 			sassLintData.shift();
-			return cb(...sassLintData);
+			return cb(sassLintData[0], sassLintData[1]);
 		}
 
 		if (sassLintData.errorCount.count + sassLintData.warningCount.count === 0) {
@@ -214,7 +214,7 @@ gulpHappinessScss.failOnError = function (options = {}) {
 
 		if (Array.isArray(sassLintData)) {
 			sassLintData.shift();
-			return cb(...sassLintData);
+			return cb(sassLintData[0], sassLintData[1]);
 		}
 
 		if (sassLintData.errorCount.count === 0) {
@@ -272,7 +272,7 @@ gulpHappinessScss.failAfterError = function (options = {}) {
 
 		if (Array.isArray(sassLintData)) {
 			sassLintData.shift();
-			return cb(...sassLintData);
+			return cb(sassLintData[0], sassLintData[1]);
 		}
 
 		if (sassLintData.errorCount.count === 0) {

@@ -7,6 +7,12 @@
 
 ---
 
+## [5.1.0] - 2017-09-13
+
+- Bump to `happiness-scss@5.1.0`
+
+---
+
 ## [5.0.0] - 2017-07-03
 
 - Bump to `happiness-scss@5.0.0`
